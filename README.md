@@ -8,6 +8,7 @@ Project showing a simple example of Spring Boot application with H2 database, te
 - [x] Junit
 
 ## Documentation
-The Spock configuration is based on
+The Spock configuration and Theory
 
 * [Tutorial Spock](https://www.baeldung.com/spring-spock-testing)
+* [Spock Theory](https://github.com/jonathanperezdev/Knowledge-Base/blob/main/Testing/concepts/testing-concepts.md#Spock)
