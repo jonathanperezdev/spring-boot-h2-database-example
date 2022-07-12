@@ -20,6 +20,7 @@ class StudentServiceTest2 extends Specification {
 
     //Capturing the parameter of repository.save and assign to variable to validate
     def "Given an student When save Then Student repo save entity should match id"(){
+        //Declare external variable to validate
         Student entity
         given: "an student"
             Student student = new Student()
@@ -30,7 +31,10 @@ class StudentServiceTest2 extends Specification {
             service.saveOrUpdate(student)
 
         then: "repo save entity should match id"
+            //Assign the parameter to the external variable
             1 * repository.save(_) >> {arguments -> entity = arguments[0]}
+
+            //Validating
             entity.getId() == 1
     }
 
@@ -45,6 +49,7 @@ class StudentServiceTest2 extends Specification {
             service.saveOrUpdate(student)
 
         then: "Student name should match"
+            //The entity received in repository is validated here
             1 * repository.save({Student entity2 -> entity2.getName().is("testName")})
     }
 }
